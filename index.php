@@ -16,9 +16,9 @@ include_once("conection.php");
 
     <form action="" method="GET">
 
-        <select name="name" onchange="this.form.submit()">
+        <select name="ordem" onchange="this.form.submit()">
             <option value=""></option>
-            <option value="name">Pelo Nome</option>
+            <option value="nome">Pelo Nome</option>
             <option value="idade">Pala idade</option>
         </select>
 
@@ -31,7 +31,25 @@ include_once("conection.php");
             <th>Idade</th>
         </tr>
         <?php
-        $sql = "SELECT * FROM usuarios ORDER BY nome ASC";
+
+        if(isset($_GET['ordem']) && empty($_GET['ordem']) == false) {
+
+            $ordem = addslashes($_GET['ordem']);
+
+            $sql = "SELECT * FROM usuarios ORDER BY ".$ordem;
+
+
+        } else {
+
+            
+            $sql = "SELECT * FROM usuarios";
+ 
+        
+        
+        }       
+
+
+        
         $sql = $conn->query($sql);
         if($sql->rowCount() > 0) {
 
