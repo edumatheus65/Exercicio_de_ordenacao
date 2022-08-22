@@ -14,23 +14,7 @@ include_once("conection.php");
 </head>
 <body>
 
-    <form action="" method="GET">
-
-        <select name="ordem" onchange="this.form.submit()">
-            <option value=""></option>
-            <option value="nome">Pelo Nome</option>
-            <option value="idade">Pala idade</option>
-        </select>
-
-    </form>
-
-    <table border="1" width="400">
-
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-        </tr>
-        <?php
+    <?php  
 
         if(isset($_GET['ordem']) && empty($_GET['ordem']) == false) {
 
@@ -41,12 +25,33 @@ include_once("conection.php");
 
         } else {
 
-            
+            $ordem = '';
             $sql = "SELECT * FROM usuarios";
- 
-        
-        
-        }       
+        } 
+
+
+
+    ?>
+
+    <form action="" method="GET">
+
+        <select name="ordem" onchange="this.form.submit()">
+            <option value=""></option>
+            <option value="nome" <?php echo ($ordem == "nome")?'selected="selected"':''; ?>>Pelo Nome</option>
+            <option value="idade" <?php echo ($ordem == "idade")?'selected="selected"':''; ?>>Pala idade</option>
+        </select>
+
+    </form>
+
+    <table border="1" width="400">
+
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+
+
+        <?php            
 
 
         
