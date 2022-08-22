@@ -14,6 +14,16 @@ include_once("conection.php");
 </head>
 <body>
 
+    <form action="" method="GET">
+
+        <select name="name">
+            <option value=""></option>
+            <option value="name">Pelo Nome</option>
+            <option value="idade">Pala idade</option>
+        </select>
+
+    </form>
+
     <table border="1" width="400">
 
         <tr>
