@@ -3,7 +3,7 @@
     // Usando PDO
 
     $host = "localhost";
-    $dbname = "agenda";
+    $dbname = "cursophp";
     $user = "eduardo";
     $pass = "";
 
