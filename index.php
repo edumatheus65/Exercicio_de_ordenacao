@@ -1,5 +1,5 @@
 <?php
 
-$pdo = new PDO("mysql:dbnam")
+include_once("conection.php");
 
 ?>
