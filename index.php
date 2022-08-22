@@ -16,7 +16,7 @@ include_once("conection.php");
 
     <form action="" method="GET">
 
-        <select name="name">
+        <select name="name" onchange="this.form.submit()">
             <option value=""></option>
             <option value="name">Pelo Nome</option>
             <option value="idade">Pala idade</option>
@@ -31,7 +31,7 @@ include_once("conection.php");
             <th>Idade</th>
         </tr>
         <?php
-        $sql = "SELECT * FROM usuarios";
+        $sql = "SELECT * FROM usuarios ORDER BY nome ASC";
         $sql = $conn->query($sql);
         if($sql->rowCount() > 0) {
 
